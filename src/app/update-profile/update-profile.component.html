@@ -1,0 +1,142 @@
+
+<html>
+    <body>
+
+<h1>Profile Page</h1>
+
+<div>
+    <form (ngSubmit)="f.form.valid&&OnSubmit()" #f="ngForm" novalidate>
+<table class="container">
+
+<tr class="img">
+<td rowspan="8">
+<img src="../../assets/profile/profileIcon1.png" height="400" width="300" alt="NO photo"/><br><br>
+
+
+</td>
+</tr>
+<tr>
+<td>
+<!-- <label for="un">UserName :</label><br>
+<input type="text" id="un"  name="un"[(ngModel)]="userInfo.userName" >
+</td>
+</tr> -->
+<tr>
+<td>
+<label for="fn">FirstName :</label><br>
+<input type="text" id="fn" name ="fn"placeholder="FirstName" required [(ngModel)]="userInfo.userFirstName" #firstName="ngModel">
+<span class="text-danger" *ngIf="this.submit&&firstName.errors?.['required']">
+    <p>First Name required</p>
+</span>
+</td>
+<td>
+<label for="ln">LastName :</label><br>
+<input type="text" id="ln" name="ln"placeholder="LastName" required [(ngModel)]="userInfo.userLastName" #ln="ngModel">
+<span class="text-danger" *ngIf="this.submit&&ln.errors?.['required']">
+    <p>Last Name required</p>
+</span>
+</td>
+</tr>
+<tr>
+<td>
+<label for="age">Age :</label><br>
+<input type="text" id="age" name="age" placeholder="Age" required [(ngModel)]="userInfo.userAge" #age="ngModel">
+<span class="text-danger" *ngIf="this.submit&&age.errors?.['required']">
+    <p>Age required</p>
+</span>
+</td>
+
+<td>
+<label for="email">Email :</label><br>
+<input type="text" id="email" name="email" placeholder="Email"  disabled required [(ngModel)]="userInfo.userEmail" #email="ngModel" >
+<span class="text-danger" *ngIf="this.submit&&email.errors?.['required']">
+    <p>Email required</p>
+</span>
+</td>
+
+
+<td>
+<label for="contact">Contact Number :</label><br>
+<input type="text" id="contact" name="contact" placeholder="Contact Number" required [(ngModel)]="userInfo.userContactNumber" #contact="ngModel">
+<span class="text-danger" *ngIf="this.submit&&contact.errors?.['required']">
+    <p>Contact number is required</p>
+</span>
+</td>
+
+<td>
+<label for="gender">Gender :</label><br>
+<select id="gender" name="gender" [(ngModel)]="userInfo.userGender">
+<option value="">select...</option>
+<option value="Male">Male</option>
+<option value="FeMale">FeMale</option>
+<option value="Others">Others</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="country">Country :</label><br>
+<input type="text" id="country" name="country"placeholder="Country" required [(ngModel)]="userInfo.userCountry" #country="ngModel">
+<span class="text-danger" *ngIf="this.submit&&country.errors?.['required']">
+    <p>Country required</p>
+</span>
+</td>
+
+<td>
+<label for="state">State :</label><br>
+<input type="text" id="state" name="state"placeholder="State" required [(ngModel)]="userInfo.userState" #state="ngModel">
+<span class="text-danger" *ngIf="this.submit&&state.errors?.['required']">
+    <p>State required</p>
+</span>
+</td>
+
+<td>
+<label for="district">District :</label><br>
+<input type="text" id="district" name="district"placeholder="District" required [(ngModel)]="userInfo.userDistrict" #district="ngModel">
+<span class="text-danger" *ngIf="this.submit&&district.errors?.['required']">
+    <p>District required</p>
+</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="address">Address :</label><br>
+<textarea id="address" rows="5"  name ="address"placeholder="Address" required [(ngModel)]="userInfo.userAddress" #address="ngModel">
+</textarea>
+<span class="text-danger" *ngIf="this.submit&&address.errors?.['required']">
+    <p>Address required</p>
+</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="pincode">PinCode:</label><br>
+<input type="text" id="pincode" name="pin"placeholder="PinCode" required [(ngModel)]="userInfo.userPincode" #pin="ngModel">
+<span class="text-danger" *ngIf="this.submit&&pin.errors?.['required']">
+    <p>PinCode required</p>
+</span>
+</td>
+</tr>
+
+
+<tr>
+    <td>
+        <button (click)="goToGetProfile()" class="btn btn-danger">Cancel</button>
+    </td>
+<td>
+<input type="submit" class="btn btn-primary"value="Update Profile" (click)="submit=true">
+</td>
+
+</tr>
+
+</table>
+</form>
+</div>
+</body>
+</html>
+
+
+
